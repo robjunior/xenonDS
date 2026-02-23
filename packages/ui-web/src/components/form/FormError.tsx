@@ -1,4 +1,3 @@
-xenonDS/packages/ui-web/src/components/form/FormError.tsx
 import React from "react";
 import { useFormContext } from "./Form";
 

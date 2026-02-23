@@ -2,7 +2,8 @@ import React, { forwardRef } from "react";
 import { useFormContext } from "./Form";
 import { cn } from "../../utils/cn";
 
-interface FormInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
+interface FormInputProps
+  extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "size"> {
   name: string;
   variant?: "default" | "outline";
   size?: "sm" | "md" | "lg";

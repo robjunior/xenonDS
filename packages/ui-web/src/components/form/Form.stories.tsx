@@ -1,4 +1,3 @@
-xenonDS/packages/ui-web/src/components/form/Form.stories.tsx
 import React from "react";
 import { Meta, StoryObj } from "@storybook/react";
 import { Form, FormField, FormInput, FormButton, FormError } from ".";
