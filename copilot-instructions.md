@@ -101,11 +101,12 @@ Never remove semantic HTML.
 
 ---
 
-# 🧪 Storybook requirements
+# 🧪 Storybook and Testing requirements
 
-Every new component must include:
+Every new feature (component, button, form, menu, etc.) must include:
 
-* Story file
+* A unit test file that covers the system logic and public API
+* A Storybook story file for documentation and visual testing
 * All variants
 * All sizes
 * Disabled state
@@ -114,6 +115,10 @@ Every new component must include:
 Stories live in:
 
 packages/ui-web/src/components/<name>.stories.tsx
+
+Unit tests live in:
+
+packages/ui-web/src/components/<name>.test.tsx
 
 ---
 
