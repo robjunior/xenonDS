@@ -92,13 +92,19 @@ export const DisabledState: StoryObj = {
   ),
 };
 
+const buttonVariants = [
+  "default",
+  "secondary",
+  "outline",
+  "destructive",
+] as const;
+
+const buttonSizes = ["sm", "md", "lg"] as const;
+
 export const VariantsAndSizes: StoryObj = {
   render: () => (
     <div className="space-y-6 max-w-sm mx-auto mt-10 p-6 bg-background rounded shadow">
-      <Form
-        initialValues={{ email: "", password: "" }}
-        onSubmit={() => {}}
-      >
+      <Form initialValues={{ email: "", password: "" }} onSubmit={() => {}}>
         <FormField name="email" label="Email">
           <FormInput name="email" placeholder="default md" />
         </FormField>
@@ -109,21 +115,25 @@ export const VariantsAndSizes: StoryObj = {
           <FormInput name="emailLg" size="lg" placeholder="large" />
         </FormField>
         <FormField name="emailOutline" label="Email (outline)">
-          <FormInput name="emailOutline" variant="outline" placeholder="outline" />
+          <FormInput
+            name="emailOutline"
+            variant="outline"
+            placeholder="outline"
+          />
         </FormField>
         <div className="flex gap-2 mt-4">
-          <FormButton type="button" variant="default">
-            Default
-          </FormButton>
-          <FormButton type="button" variant="secondary">
-            Secondary
-          </FormButton>
-          <FormButton type="button" variant="outline">
-            Outline
-          </FormButton>
-          <FormButton type="button" variant="destructive">
-            Destructive
-          </FormButton>
+          {buttonVariants.map((variant) => (
+            <FormButton key={variant} type="button" variant={variant}>
+              {variant.charAt(0).toUpperCase() + variant.slice(1)}
+            </FormButton>
+          ))}
+        </div>
+        <div className="flex gap-2 mt-4">
+          {buttonSizes.map((size) => (
+            <FormButton key={size} type="button" size={size}>
+              {size.charAt(0).toUpperCase() + size.slice(1)}
+            </FormButton>
+          ))}
         </div>
       </Form>
     </div>
